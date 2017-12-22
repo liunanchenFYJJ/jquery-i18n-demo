@@ -113,6 +113,7 @@ var execI18n = function(){
     /*
      这里需要进行i18n的翻译
      */
+    console.log(jQuery.i18n)
     jQuery.i18n.properties({
         name : sourceName, //资源文件名称
         path : 'i18n/' + i18nLanguage +'/', //资源文件路径
@@ -124,6 +125,13 @@ var execI18n = function(){
             insertEle.each(function() {
                 // 根据i18n元素的 name 获取内容写入
                 $(this).html($.i18n.prop($(this).attr('name')));
+                // .propertise的key
+                // console.log($(this).attr('name'))       
+                // .propertise的value 
+                // console.log($.i18n.prop($(this).attr('name')))
+                // 有可能关于xml格式问题？需要公司电脑Firefox测试
+                // console.log(encodeURI('我'))
+                // console.log(decodeURI('%E6%88%91'))
             });
             console.log("写入完毕");
 
@@ -135,6 +143,7 @@ var execI18n = function(){
                     selectAttr = "value";
                 };
                 $(this).attr(selectAttr, $.i18n.prop($(this).attr('selectname')));
+                // console.log( $.i18n.prop($(this).attr('selectname')))
             });
             console.log("写入完毕");
         }
