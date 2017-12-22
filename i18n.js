@@ -146,6 +146,13 @@ var execI18n = function(){
                 // console.log( $.i18n.prop($(this).attr('selectname')))
             });
             console.log("写入完毕");
+
+            console.log(".i18n-li 写入中...");
+            var insertAEle = $(".i18n-li > li > a");
+            insertAEle.each(function() {
+                $(this).html($.i18n.prop($(this).attr('name1')));                
+            });
+            console.log("写入完毕");
         }
     });
 }
