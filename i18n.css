@@ -1,0 +1,40 @@
+html {
+    width: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    display: inline;
+}
+
+ul li {
+    display: inline;
+    padding-left: 50px;
+}
+
+.lan {
+    float: left;
+    margin: 10px 20px 20px 20px;
+    background-color: palegreen;
+    width: 100%;
+}
+
+.lan .lan1{
+    float: left;
+    margin-left: 50px;    
+}
+
+.lan .lan2{
+    float: left;   
+   
+}
+
+.lan .lan3{
+    float: left;    
+}
+
+
