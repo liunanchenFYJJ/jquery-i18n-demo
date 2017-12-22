@@ -4,8 +4,6 @@
 /**
  * cookie操作
  */
-
-
 var getCookie = function(name, value, options) {
     if (typeof value != 'undefined') { // name and value given, set cookie
         options = options || {};
@@ -155,17 +153,11 @@ $(function(){
     /* 选择语言 */
     $("#language").on('change', function() {
         var language = $(this).children('option:selected').val()
-
-        // getCookie("userLanguage",language,{
-        //     expires: 30,
-        //     path:'/'
-        // });
-        $.cookie("userLanguage", language, {
+        console.log(language);
+        getCookie("userLanguage",language,{
             expires: 30,
             path:'/'
-        })
-        console.log($.cookie("userLanguage"))
-
-        // location.reload();
+        });
+        location.reload();
     });
 });
