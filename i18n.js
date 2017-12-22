@@ -51,9 +51,10 @@ var getCookie = function(name, value, options) {
  * @return {string} 浏览器国家语言
  */
 var getNavLanguage = function(){
+    // console.log((navigator.language.substr(0,2)))
     if(navigator.appName == "Netscape"){
         var navLanguage = navigator.language;
-        return navLanguage.substr(0,2);
+        return navLanguage;
     }
     return false;
 }
@@ -66,7 +67,7 @@ var i18nLanguage = "zh-CN";
 /*
  设置一下网站支持的语言种类
  */
-var webLanguage = ['zh-CN', 'zh-TW', 'en'];
+var webLanguage = ['zh-CN', 'zh-TW', 'en-GB'];
 
 /**
  * 执行页面i18n方法
@@ -87,6 +88,7 @@ var execI18n = function(){
      首先获取用户浏览器设备之前选择过的语言类型
      */
     if (getCookie("userLanguage")) {
+        console.log(getCookie('userLanguage'))
         i18nLanguage = getCookie("userLanguage");
     } else {
         // 获取浏览器语言
@@ -105,6 +107,7 @@ var execI18n = function(){
         }
     }
     /* 需要引入 i18n 文件*/
+    // console.log($.i18n)
     if ($.i18n == undefined) {
         console.log("请引入i18n js 文件")
         return false;
@@ -143,21 +146,24 @@ var execI18n = function(){
 
 /*页面执行加载执行*/
 $(function(){
-
     /*执行I18n翻译*/
     execI18n();
-
     /*将语言选择默认选中缓存中的值*/
+    console.log(i18nLanguage)
     $("#language option[value="+i18nLanguage+"]").attr("selected",true);
 
     /* 选择语言 */
     $("#language").on('change', function() {
+
+        console.log( $("#language option:selected").val())
+
+
         var language = $(this).children('option:selected').val()
-        console.log(language);
+
         getCookie("userLanguage",language,{
             expires: 30,
             path:'/'
         });
-        location.reload();
+        // window.location.reload()
     });
 });
