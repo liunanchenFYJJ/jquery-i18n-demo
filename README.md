@@ -10,3 +10,6 @@
    1.file i18n
    
    to keep the i18n files
+
+## Attention
+   only avaliable in FireFox
