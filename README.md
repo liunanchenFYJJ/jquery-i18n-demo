@@ -8,4 +8,4 @@
   
 ## Explaination
    1.file i18n 
-        to keep the i18n files
+   to keep the i18n files
