@@ -11,5 +11,5 @@
    
    to keep the i18n files
 
-## Attention
+## *Attention*
    only avaliable in FireFox
