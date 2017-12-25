@@ -153,6 +153,13 @@ var execI18n = function(){
                 $(this).html($.i18n.prop($(this).attr('name1')));                
             });
             console.log("写入完毕");
+
+            console.log(".i18n-li 写入中...");
+            var btn = $(".btn");
+            btn.each(function() {
+                $(this).html($.i18n.prop($(this).attr('btn-text')));                
+            });
+            console.log("写入完毕");
         }
     });
 }
