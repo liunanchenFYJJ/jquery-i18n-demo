@@ -129,7 +129,7 @@ var execI18n = function(){
                 // console.log($(this).attr('name'))       
                 // .propertise的value 
                 // console.log($.i18n.prop($(this).attr('name')))
-                // 有可能关于xml格式问题？需要公司电脑Firefox测试
+                // 编码解码
                 // console.log(encodeURI('我'))
                 // console.log(decodeURI('%E6%88%91'))
             });
@@ -175,5 +175,16 @@ $(function(){
             path:'/'
         });
         location.reload();
+    });
+});
+
+// 导航栏页面跳转
+$(document).ready(function(){
+    $(".lan3 a").each(function(){
+        $this = $(this);
+        if($this[0].href==String(window.location)){
+            $(".collapse a").removeClass("active");
+            $this.addClass("active");
+        }
     });
 });
