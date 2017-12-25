@@ -12,4 +12,4 @@
    to keep the i18n files
 
 ## *Attention*
-   only avaliable in FireFox
+   Need an httpserver or open directly in webstrom
