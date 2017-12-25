@@ -36,7 +36,7 @@ ul li {
 .lan .lan3{
     float: left;    
 }
-
+/*导航标题变色*/
 .active {
     color: red;
 }

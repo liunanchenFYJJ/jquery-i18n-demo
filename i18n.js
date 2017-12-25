@@ -183,7 +183,7 @@ $(document).ready(function(){
     $(".lan3 a").each(function(){
         $this = $(this);
         if($this[0].href==String(window.location)){
-            $(".collapse a").removeClass("active");
+            $(".lan3 a").removeClass("active");
             $this.addClass("active");
         }
     });
