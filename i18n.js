@@ -153,13 +153,32 @@ var execI18n = function(){
                 $(this).html($.i18n.prop($(this).attr('name1')));                
             });
             console.log("写入完毕");
-
-            console.log(".i18n-li 写入中...");
+// button
+            console.log("button 写入中...");
             var btn = $(".btn");
             btn.each(function() {
+                // console.log($(this).attr('btn-text'))  
+                // console.log($.i18n)              
                 $(this).html($.i18n.prop($(this).attr('btn-text')));                
             });
             console.log("写入完毕");
+// CheckBox
+            console.log("checkboxs 写入中...");
+            var checkbox = $("input[type='checkbox']");
+            checkbox.each(function() {
+                var sValue = $(this).attr('svalue');
+                // if (!sValue) {
+                //     sValue = "value";
+                // };
+                $(this).attr(sValue, $.i18n.prop($(this).attr('selectname')));
+                // console.log( $.i18n.prop($(this).attr('selectname')))
+            });
+            // var checkbox = $("input[type='checkbox']");
+            // checkbox.each(function() {
+            //     $(this).html($.i18n.prop($(this).attr('value')));                
+            // });
+            console.log("写入完毕");
+            
         }
     });
 }
@@ -185,7 +204,7 @@ $(function(){
     });
 });
 
-// 导航栏页面跳转
+// 导航栏页面跳转 颜色变化
 $(document).ready(function(){
     $(".lan3 a").each(function(){
         $this = $(this);
