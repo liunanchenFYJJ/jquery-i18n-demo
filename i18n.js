@@ -167,17 +167,26 @@ var execI18n = function(){
             var checkbox = $("input[type='checkbox']");
             checkbox.each(function() {
                 var sValue = $(this).attr('svalue');
-                // if (!sValue) {
-                //     sValue = "value";
-                // };
                 $(this).attr(sValue, $.i18n.prop($(this).attr('selectname')));
-                // console.log( $.i18n.prop($(this).attr('selectname')))
             });
-            // var checkbox = $("input[type='checkbox']");
-            // checkbox.each(function() {
-            //     $(this).html($.i18n.prop($(this).attr('value')));                
-            // });
             console.log("写入完毕");
+
+            // radio
+            // console.log("radio 写入中...");
+            // var radio = $("input[type='radio']");
+            // radio.each(function() {
+            //     var sValue = $(this).attr('svalue');
+            //     // if (!sValue) {
+            //     //     sValue = "value";
+            //     // };
+            //     $(this).attr(sValue, $.i18n.prop($(this).attr('selectname')));
+            //     // console.log( $.i18n.prop($(this).attr('selectname')))
+            // });
+            // // var checkbox = $("input[type='checkbox']");
+            // // checkbox.each(function() {
+            // //     $(this).html($.i18n.prop($(this).attr('value')));
+            // // });
+            // console.log("写入完毕");
             
         }
     });
