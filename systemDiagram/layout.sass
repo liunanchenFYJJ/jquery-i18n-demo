@@ -1,0 +1,44 @@
+$height: 100%
+html
+    height: $height
+    body
+        height: $height
+        div.row
+            height: $height
+            margin: 0
+            div.icons
+                height: $height
+                padding: 0
+                position: absolute
+                left: 0
+                top: 0
+                z-index: 2
+                background: #fff
+                div
+                    padding: 0
+                    height: 60px
+                    &:hover
+                        cursor: pointer
+                    .svg-icon
+                        width: 3em
+                        position: absolute
+                        left: 0
+                        top: 0
+                    span
+                        display: inline-block
+            div.workspace
+                height: $height
+                padding: 0
+                position: absolute
+                left: 0
+                top: 0
+                z-index: 1
+                background: lightblue
+            div.details
+                height: $height
+                padding: 0
+                position: absolute
+                right: 0
+                top: 0
+                z-index: 2
+                background: #fff
