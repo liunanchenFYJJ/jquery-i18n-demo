@@ -23,8 +23,19 @@
         constructor: cQuery,
         cquery: version,
         length: 0,
+        /**
+         * 对传入selector进行分析
+         * 结合jQuery API文档
+         * @param {*} selector 
+         */
         init: function( selector ) {
-            console.log('selector');
+            let match = null;
+            let idReg = /^#/;
+            if (idReg.test(selector)) {
+                // console.log(selector.slice(1));
+                match = document.getElementById(selector.slice(1));
+            }
+            return output;
         }
     };
     // 对应第13行?

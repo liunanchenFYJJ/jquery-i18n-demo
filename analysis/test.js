@@ -1,4 +1,4 @@
-console.log($());
+console.log($('#test'));
 
 // function person(name) {
 //     this.name = name;
