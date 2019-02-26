@@ -1,4 +1,5 @@
 console.log($('#test'));
+console.log($('.id'));
 
 // function person(name) {
 //     this.name = name;

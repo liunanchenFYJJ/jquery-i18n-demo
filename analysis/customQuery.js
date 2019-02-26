@@ -29,13 +29,19 @@
          * @param {*} selector 
          */
         init: function( selector ) {
-            let match = null;
-            let idReg = /^#/;
-            if (idReg.test(selector)) {
-                // console.log(selector.slice(1));
-                match = document.getElementById(selector.slice(1));
+            let match;
+            // 处理selector falsy时
+            if ( !selector ) {
+                return this;
             }
-            return output;
+            let idReg = /^#/;
+            let classReg = /^./;
+            if (idReg.test(selector)) {
+                match = document.getElementById(selector.slice(1));
+            } else if (classReg.test(selector)) {
+                match = document.getElementsByClassName(selector.slice(1));
+            }
+            return match;
         }
     };
     // 对应第13行?
