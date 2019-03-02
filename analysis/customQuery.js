@@ -25,21 +25,36 @@
         length: 0,
         /**
          * 对传入selector进行分析
+         * context上下文限制selector的搜索范围
          * 结合jQuery API文档
-         * @param {*} selector 
+         * @param {*} selector
+         * @param {Element} context
          */
-        init: function( selector ) {
+        init: function( selector, context ) {
             let match;
             // 处理selector falsy时
+            // $('') $(null) $(undefined) $(false)
             if ( !selector ) {
                 return this;
             }
-            let idReg = /^#/;
-            let classReg = /^./;
-            if (idReg.test(selector)) {
-                match = document.getElementById(selector.slice(1));
-            } else if (classReg.test(selector)) {
-                match = document.getElementsByClassName(selector.slice(1));
+            // 处理selector string时
+            if (typeof selector === 'string') {
+                let idReg = /^#/;
+                let classReg = /^./;
+                // let tagReg = /^<$>/;
+                // 简单情况，(没有转义字符的情况下)
+                // $('#id')
+                if (idReg.test(selector)) {
+                    match = document.getElementById(selector.slice(1));
+                }
+                // $('.class')
+                if (classReg.test(selector)) {
+                    match = document.getElementsByClassName(selector.slice(1));
+                }
+                // $('div')
+                // if (tagReg.test(selector)) {
+                    match = document.getElementsByTagName(selector);
+                // }
             }
             return match;
         }

@@ -1,5 +1,6 @@
-console.log($('#test'));
-console.log($('.id'));
+// console.log($('<'));
+console.log($('h3'));
+// console.log(document.getElementsByTagName('h3'))
 
 // function person(name) {
 //     this.name = name;
