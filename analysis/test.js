@@ -1,5 +1,5 @@
 // console.log($('<'));
-console.log($('h3'));
+console.log( document.querySelector('#test'));
 // console.log(document.getElementsByTagName('h3'))
 
 // function person(name) {

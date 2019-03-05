@@ -9,9 +9,9 @@
      * @param {String} selector 
      * @returns {cQuery} cQuery实例
      */
-    let cQuery = function( selector ) {
+    let cQuery = function( selector, context ) {
         // return new cQuery.prototype.init( selector );
-        return new cQuery.fn.init( selector );
+        return new cQuery.fn.init( selector, context );
     };
     // 版本号
     let version = '0.0.1';
@@ -24,11 +24,18 @@
         cquery: version,
         length: 0,
         /**
-         * 对传入selector进行分析
+         * 对传入selector进行分析 7种？
          * context上下文限制selector的搜索范围
          * 结合jQuery API文档
          * @param {*} selector
          * @param {Element} context
+         * 1.DOM元素 包装成cQuery对象，直接返回
+         * 2.body document.body
+         * 3.HTML标签 document.createElement
+         * 4.HTML字符串 document.createDocumentFragment
+         * 5.#id
+         * 6.选择器表达式
+         * 7.函数
          */
         init: function( selector, context ) {
             let match;
@@ -62,6 +69,14 @@
     // 对应第13行?
     // cQuery.fn.init的原型 ==指向==> cQuery.fn 即$实例继承cQuery.fn 所有方法
     cQuery.fn.init.prototype = cQuery.fn;
+    // 合并两个或者更多对象的属性到第一个对象中 结合api?
+    /**
+     * 
+     */
+    cQuery.extend = cQuery.fn.extend = function() {};
+    cQuery.extend({
+
+    })
     // 暴露cQuery
     window.$ = window.cQuery = cQuery; 
 })(window)
